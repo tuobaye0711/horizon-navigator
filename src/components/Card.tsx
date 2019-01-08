@@ -1,10 +1,13 @@
-import {Card} from 'antd';
+import * as React from 'react'
+import { Card } from "antd";
 
-interface Props {
+interface IProps {
   name: string;
   url: string;
 }
 
-const UrlCard = ({ name, url }: Props) => {
-
+const UrlCard = ({ name, url }: IProps) => {
+  return <Card title={name}>{url}</Card>;
 };
+
+export default UrlCard;
