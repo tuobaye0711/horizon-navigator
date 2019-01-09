@@ -1,0 +1,62 @@
+.wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(12, 1fr [col-line]);
+  grid-template-rows: 50px 20% auto 50px;
+  grid-gap: 20px;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    ". . . t t t t t t . . ."
+    ". . m m m m m m m m . ."
+    "f f f f f f f f f f f f";
+}
+
+.header {
+  grid-area: h;
+  background-color: #a68cd9;
+}
+
+.tools {
+  grid-area: t;
+  /* background-color: #87cb62; */
+}
+
+.main {
+  grid-area: m;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 100%;
+  grid-column-gap: 10px;
+  /* background-color: #ede6c9; */
+}
+
+.footer {
+  grid-area: f;
+  background-color: #a3e0e0;
+}
+
+.block {
+  grid: 1fr;
+}
+
+.search {
+  height: 20%
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.ant-card {
+  height: 50px;
+}
+.ant-card:hover {
+  transform: scale(1.2);
+  z-index: 999;
+}
+.ant-card-body {
+  padding: 15px!important;
+}

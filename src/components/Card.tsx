@@ -1,5 +1,7 @@
-import * as React from 'react'
+import * as React from "react";
 import { Card } from "antd";
+
+// const { Meta } = Card;
 
 interface IProps {
   name: string;
@@ -7,7 +9,16 @@ interface IProps {
 }
 
 const UrlCard = ({ name, url }: IProps) => {
-  return <Card title={name}>{url}</Card>;
+  return (
+    <Card
+      hoverable={true}
+      onClick={() => {
+        window.open(url);
+      }}
+    >
+      {name}
+    </Card>
+  );
 };
 
 export default UrlCard;
