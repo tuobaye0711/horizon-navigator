@@ -1,8 +1,11 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .App {
   text-align: center;
+  width: 100%;
   height: 100%;
+  background: url("./img/background.jpg") no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
@@ -26,6 +29,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

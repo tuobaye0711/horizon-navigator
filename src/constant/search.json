@@ -1,0 +1,20 @@
+[
+  {
+    "name": "baidu",
+    "show": "Baidu",
+    "url": "https://www.baidu.com/s?wd=",
+    "description": "百度一下，你就知道"
+  },
+  {
+    "name": "google",
+    "show": "Google",
+    "url": "https://www.google.com/search?q=",
+    "description": "谷歌一下，你就知道的太多了"
+  },
+  {
+    "name": "bing",
+    "show": "Bing",
+    "url": "https://cn.bing.com/search?q=",
+    "description": "必应一下，你也能知道"
+  }
+]

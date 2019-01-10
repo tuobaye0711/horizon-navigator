@@ -15,7 +15,7 @@ const Block = ({ category, websites, className }: IProps) => {
         .filter(w => w.category === category)
         .slice(0, 9)
         .map(i => (
-          <UrlCard name={i.name} url={i.url} />
+          <UrlCard name={i.name} url={i.url} key={i.weight} />
         ))}
     </div>
   );

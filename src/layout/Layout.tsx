@@ -57,15 +57,21 @@ const Layout = ({ websites }: IWebsites) => {
       <div className="header" />
       <div className="tools">
         <img
-          src={require("../img/horizon.png")}
+          src={require("../img/horizon_white.png")}
           alt="Horizon"
-          className="logo"
+          className="img logo"
         />
-        <Searcher type="google" className="search" />
+        <img
+          src={require("../img/horizon_slogan.png")}
+          alt="Horizon"
+          className="img slogan"
+          // onlick={() => window.open("https://horizon.ai")}
+        />
+        <Searcher className="search" />
       </div>
       <div className="main">
         {categorys.slice(0, 8).map(i => (
-          <Block category={i} websites={websites} className="block" />
+          <Block category={i} websites={websites} className="block" key={i} />
         ))}
       </div>
       <div className="footer" />

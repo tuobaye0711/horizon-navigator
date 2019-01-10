@@ -1,28 +1,53 @@
 import * as React from "react";
-import { Input } from "antd";
+import { Input, Select } from "antd";
 
+const SearchList = require("../constant/search.json");
 const Search = Input.Search;
+const { Option } = Select;
 
 interface IProps {
-  type: string;
   className: string;
 }
 
-const Searcher = ({ type, className }: IProps) => {
+interface ISearch {
+  name: string;
+  show: string;
+  url: string;
+  description: string;
+}
+
+let type: ISearch = SearchList[0];
+
+const handleChange = value => {
+  type = SearchList.filter(i => i.name === value)[0];
+  console.log("​type", type);
+};
+
+const menu = (
+  <Select
+    defaultValue={SearchList[0].name}
+    onChange={handleChange}
+    style={{ width: 90 }}
+  >
+    {SearchList.map(i => (
+      <Option key={i.name} value={i.name}>
+        {i.show}
+      </Option>
+    ))}
+  </Select>
+);
+
+const Searcher = ({ className }: IProps) => {
   return (
     <div className={className}>
       <Search
-        placeholder="谷歌一下，你就知道"
+        placeholder={type.description}
         enterButton="Search"
+        allowClear={true}
         size="large"
+        addonBefore={menu}
         onSearch={value => {
-          switch (type) {
-            case "google":
-              window.open(`https://www.google.com/search?q=${value}`);
-              break;
-            default:
-              window.open(`https://www.baidu.com/s?wd=${value}`);
-          }
+          window.open(type.url + value);
         }}
       />
     </div>
