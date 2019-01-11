@@ -52,6 +52,10 @@
   margin-bottom: 30px;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 .logo:hover {
   animation: logo-spin infinite 2s linear;
   /* animation-timing-function: cubic-bezier(.34,0,.84,1); */

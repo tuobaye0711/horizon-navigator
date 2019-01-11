@@ -12,6 +12,7 @@
     "object-literal-sort-keys": false,
     "no-console": false,
     "no-var-requires": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "member-access": true
   }
 }

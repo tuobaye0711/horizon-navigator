@@ -60,12 +60,12 @@ const Layout = ({ websites }: IWebsites) => {
           src={require("../img/horizon_white.png")}
           alt="Horizon"
           className="img logo"
+          onClick={() => window.open("https://horizon.ai")}
         />
         <img
           src={require("../img/horizon_slogan.png")}
           alt="Horizon"
           className="img slogan"
-          // onlick={() => window.open("https://horizon.ai")}
         />
         <Searcher className="search" />
       </div>
