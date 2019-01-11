@@ -29,7 +29,7 @@ class Searcher extends PureComponent<IProps, IState> {
   public menu = (
     <Select
       defaultValue={SearchList[0].name}
-      onChange={this.handleChange}
+      onChange={val => this.handleChange(val)}
       style={{ width: 90 }}
     >
       {SearchList.map(i => (
@@ -45,6 +45,7 @@ class Searcher extends PureComponent<IProps, IState> {
   }
 
   public handleChange = value => {
+		console.log("​Searcher -> value", value)
     this.setState({
       type: SearchList.filter(i => i.name === value)[0]
     });
@@ -58,7 +59,7 @@ class Searcher extends PureComponent<IProps, IState> {
       <div className={className}>
         <Search
           placeholder={type.description}
-          enterButton="Search"
+          enterButton="搜索"
           allowClear={true}
           size="large"
           addonBefore={this.menu}

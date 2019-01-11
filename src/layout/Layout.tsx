@@ -11,11 +11,13 @@ export interface IWebsite {
   weight?: string;
 }
 
-export interface IWebsites {
+export interface IProps {
   websites: IWebsite[];
+  onEvent?: any;
 }
 
 const categorys = [
+  "地平线",
   "常用",
   "IT技术",
   "设计",
@@ -51,7 +53,17 @@ const categorys = [
   "银行"
 ];
 
-const Layout = ({ websites }: IWebsites) => {
+const Layout = ({ websites, onEvent }: IProps) => {
+  const changeBackground = () => {
+    fetch("https://api.tuobaye.com:8888/wallpaper/random/url")
+      .then(res => res.json())
+      .then(data => {
+        console.log("​changeBackground -> data", data);
+        onEvent("change-bg", data.url);
+      })
+      .catch(err => console.log("​changeBackground -> err", err));
+  };
+
   return (
     <div className="wrapper">
       <div className="header" />
@@ -59,13 +71,15 @@ const Layout = ({ websites }: IWebsites) => {
         <img
           src={require("../img/horizon_white.png")}
           alt="Horizon"
+          title="😜点我点我点我！"
           className="img logo"
-          onClick={() => window.open("https://horizon.ai")}
+          onClick={() => changeBackground()}
         />
         <img
           src={require("../img/horizon_slogan.png")}
           alt="Horizon"
           className="img slogan"
+          onClick={() => window.open("https://horizon.ai")}
         />
         <Searcher className="search" />
       </div>

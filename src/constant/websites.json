@@ -1,5 +1,59 @@
 [
   {
+    "url": "http://oa.hobot.cc",
+    "category": "地平线",
+    "name": "OA",
+    "weight": "001"
+  },
+  {
+    "url": "http://italent.cn",
+    "category": "地平线",
+    "name": "Italent",
+    "weight": "002"
+  },
+  {
+    "url": "http://10.9.1.29:8080/hobot/login",
+    "category": "地平线",
+    "name": "会议室预定",
+    "weight": "003"
+  },
+  {
+    "url": "http://wiki.hobot.cc",
+    "category": "地平线",
+    "name": "Wiki",
+    "weight": "004"
+  },
+  {
+    "url": "http://jira.hobot.cc",
+    "category": "地平线",
+    "name": "Jira",
+    "weight": "005"
+  },
+  {
+    "url": "http://gitlab.hobot.cc",
+    "category": "地平线",
+    "name": "Gitlab",
+    "weight": "006"
+  },
+  {
+    "url": "http://ph.hobot.cc/",
+    "category": "地平线",
+    "name": "Phabricator",
+    "weight": "007"
+  },
+  {
+    "url": "https://mail.hobot.cc",
+    "category": "地平线",
+    "name": "邮箱",
+    "weight": "008"
+  },
+  {
+    "url": "https://vpn.horizon.ai:4567",
+    "category": "地平线",
+    "name": "VPN",
+    "weight": "009"
+  },
+  {
     "url": "https://www.baidu.com/",
     "category": "常用",
     "name": "百度",
@@ -3450,9 +3504,9 @@
     "weight": "1607"
   },
   {
-    "url": "http://www.cocoachina.com/",
+    "url": "https://juejin.im",
     "category": "IT技术",
-    "name": "Cocoachina",
+    "name": "掘金",
     "weight": "1608"
   },
   {
