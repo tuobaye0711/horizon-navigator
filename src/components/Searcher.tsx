@@ -8,6 +8,7 @@ const { Option } = Select;
 
 interface IProps {
   className: string;
+  onClick: any;
 }
 
 interface ISearch {
@@ -45,7 +46,6 @@ class Searcher extends PureComponent<IProps, IState> {
   }
 
   public handleChange = value => {
-		console.log("​Searcher -> value", value)
     this.setState({
       type: SearchList.filter(i => i.name === value)[0]
     });
@@ -64,7 +64,10 @@ class Searcher extends PureComponent<IProps, IState> {
           size="large"
           addonBefore={this.menu}
           onSearch={value => {
-            window.open(type.url + value);
+            console.log("​Searcher -> value", value)
+            if(this.props.onClick(value)){
+              window.open(type.url + value);
+            }
           }}
         />
       </div>

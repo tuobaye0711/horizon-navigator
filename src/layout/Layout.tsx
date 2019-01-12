@@ -1,19 +1,25 @@
 import * as React from "react";
+import { PureComponent } from "react";
 import "./layout.css";
 
 import Searcher from "../components/Searcher";
 import Block from "../components/Block";
+import Clock from "../components/Clock";
 
-export interface IWebsite {
+interface IWebsite {
   category?: string;
   name: string;
   url: string;
   weight?: string;
 }
 
-export interface IProps {
+interface IProps {
   websites: IWebsite[];
   onEvent?: any;
+}
+
+interface IState {
+  showClock: boolean;
 }
 
 const categorys = [
@@ -53,44 +59,73 @@ const categorys = [
   "银行"
 ];
 
-const Layout = ({ websites, onEvent }: IProps) => {
-  const changeBackground = () => {
-    fetch("https://api.tuobaye.com:8888/wallpaper/random/url")
-      .then(res => res.json())
-      .then(data => {
-        console.log("​changeBackground -> data", data);
-        onEvent("change-bg", data.url);
-      })
-      .catch(err => console.log("​changeBackground -> err", err));
+class Layout extends PureComponent<IProps, IState> {
+  public state: IState = {
+    showClock: false
   };
+  constructor(props: IProps) {
+    super(props);
+  }
+  public onClick = value => {
+    switch (value.toLowerCase()) {
+      case "":
+        this.setState({
+          showClock: false
+        });
+        return false;
+        break;
+      case "时间":
+      case "time":
+        this.setState({
+          showClock: true
+        });
+        return false;
+        break;
+      default:
+        return true
+    }
+  };
+  public render() {
+    const { onEvent, websites } = this.props;
+    const { showClock } = this.state;
+    const changeBackground = () => {
+      fetch("https://api.tuobaye.com:8888/wallpaper/random/url")
+        .then(res => res.json())
+        .then(data => {
+          console.log("​changeBackground -> data", data);
+          onEvent("change-bg", data.url);
+        })
+        .catch(err => console.log("​changeBackground -> err", err));
+    };
 
-  return (
-    <div className="wrapper">
-      <div className="header" />
-      <div className="tools">
-        <img
-          src={require("../img/horizon_white.png")}
-          alt="Horizon"
-          title="😜点我点我点我！"
-          className="img logo"
-          onClick={() => changeBackground()}
-        />
-        <img
-          src={require("../img/horizon_slogan.png")}
-          alt="Horizon"
-          className="img slogan"
-          onClick={() => window.open("https://horizon.ai")}
-        />
-        <Searcher className="search" />
+    return (
+      <div className="wrapper">
+        <div className="header">{showClock && <Clock />}</div>
+        <div className="tools">
+          <img
+            src={require("../img/horizon_white.png")}
+            alt="Horizon"
+            title="😜点我点我点我！"
+            className="img logo"
+            onClick={() => changeBackground()}
+          />
+          <img
+            src={require("../img/horizon_slogan.png")}
+            alt="Horizon"
+            className="img slogan"
+            onClick={() => window.open("https://horizon.ai")}
+          />
+          <Searcher className="search" onClick={this.onClick} />
+        </div>
+        <div className="main">
+          {categorys.slice(0, 8).map(i => (
+            <Block category={i} websites={websites} className="block" key={i} />
+          ))}
+        </div>
+        <div className="footer" />
       </div>
-      <div className="main">
-        {categorys.slice(0, 8).map(i => (
-          <Block category={i} websites={websites} className="block" key={i} />
-        ))}
-      </div>
-      <div className="footer" />
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Layout;

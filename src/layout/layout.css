@@ -13,6 +13,9 @@
 
 .header {
   grid-area: h;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100%;
   /* background-color: #a68cd9; */
 }
 
@@ -35,7 +38,11 @@
   /* background-color: #a3e0e0; */
 }
 
-.block {
+/* .header .clock {
+  grid: 1fr
+} */
+
+.main .block {
   grid: 1fr;
   color: whitesmoke;
 }
