@@ -82,12 +82,14 @@ class Layout extends PureComponent<IProps, IState> {
         return false;
         break;
       default:
-        return true
+        return true;
     }
   };
   public render() {
     const { onEvent, websites } = this.props;
     const { showClock } = this.state;
+    const randomAnima = new Date().getTime() % 2 ? "anima" : "";
+		console.log("​Layout -> publicrender -> randomAnima", randomAnima)
     const changeBackground = () => {
       fetch("https://api.tuobaye.com:8888/wallpaper/random/url")
         .then(res => res.json())
@@ -106,13 +108,13 @@ class Layout extends PureComponent<IProps, IState> {
             src={require("../img/horizon_white.png")}
             alt="Horizon"
             title="😜点我点我点我！"
-            className="img logo"
+            className={"img logo " + randomAnima}
             onClick={() => changeBackground()}
           />
           <img
             src={require("../img/horizon_slogan.png")}
             alt="Horizon"
-            className="img slogan"
+            className={"img slogan"}
             onClick={() => window.open("https://horizon.ai")}
           />
           <Searcher className="search" onClick={this.onClick} />

@@ -17,6 +17,7 @@ class Clock extends PureComponent {
     clock.canvas.width = 200*1.5;
     clock.canvas.height = 200*1.5;
     clock.strokeStyle = "#28d1fa";
+    clock.stroke();
     clock.lineWidth = 5;
     clock.lineCap = "round";
     clock.shadowBlur = 0;
