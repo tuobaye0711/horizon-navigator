@@ -66,7 +66,7 @@ class Layout extends PureComponent<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }
-  public onClick = value => {
+  public handleCommand = value => {
     switch (value.toLowerCase()) {
       case "":
         this.setState({
@@ -95,6 +95,7 @@ class Layout extends PureComponent<IProps, IState> {
         .then(res => res.json())
         .then(data => {
           console.log("​changeBackground -> data", data);
+          window.localStorage.bgUrl = data.url;
           onEvent("change-bg", data.url);
         })
         .catch(err => console.log("​changeBackground -> err", err));
@@ -105,19 +106,21 @@ class Layout extends PureComponent<IProps, IState> {
         <div className="header">{showClock && <Clock />}</div>
         <div className="tools">
           <img
-            src={require("../img/horizon_white.png")}
+            src={require("../img/logo.png")}
+            // src={require("../img/horizon_white.png")}
             alt="Horizon"
             title="😜点我点我点我！"
             className={"img logo " + randomAnima}
             onClick={() => changeBackground()}
           />
           <img
-            src={require("../img/horizon_slogan.png")}
+            src={require("../img/slogan.png")}
+            // src={require("../img/horizon_slogan.png")}
             alt="Horizon"
             className={"img slogan"}
             onClick={() => window.open("https://horizon.ai")}
           />
-          <Searcher className="search" onClick={this.onClick} />
+          <Searcher className="search" onClick={this.handleCommand} />
         </div>
         <div className="main">
           {categorys.slice(0, 8).map(i => (

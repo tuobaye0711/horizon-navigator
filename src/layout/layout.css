@@ -49,14 +49,14 @@
 }
 
 .search {
-  height: 20%;
+  /* height: 20%; */
 }
 
 .img {
   width: auto;
   height: auto;
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 60%;
+  max-height: 60%;
   margin-bottom: 30px;
 }
 
@@ -77,7 +77,7 @@
 
 /* logo旋转效果2 */
 .anima:hover {
-  animation: logo-spin infinite 2s linear!important;
+  animation: logo-spin infinite 2s linear !important;
 }
 
 /* logo旋转动效 */
@@ -130,6 +130,7 @@
   transform: scale(1.4);
 }
 
+
 /* 媒体查询，自适应 */
 @media screen and (max-width: 1400px) {
   .wrapper {
@@ -142,5 +143,160 @@
   .main {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     grid-template-rows: auto;
+  }
+}
+
+/* 简易编辑态图标抖动效果 */
+@keyframes shake {
+  2% {
+    transform: rotate(1.5deg);
+  }
+  4% {
+    transform: rotate(-1.5deg);
+  }
+  6% {
+    transform: rotate(1.5deg);
+  }
+  8% {
+    transform: rotate(-1.5deg);
+  }
+  10% {
+    transform: rotate(1.5deg);
+  }
+  12% {
+    transform: rotate(-1.5deg);
+  }
+  14% {
+    transform: rotate(1.5deg);
+  }
+  16% {
+    transform: rotate(-1.5deg);
+  }
+  18% {
+    transform: rotate(1.5deg);
+  }
+  20% {
+    transform: rotate(-1.5deg);
+  }
+  22% {
+    transform: rotate(-1.5deg);
+  }
+  24% {
+    transform: rotate(1.5deg);
+  }
+  26% {
+    transform: rotate(-1.5deg);
+  }
+  28% {
+    transform: rotate(1.5deg);
+  }
+  30% {
+    transform: rotate(-1.5deg);
+  }
+  32% {
+    transform: rotate(1.5deg);
+  }
+  34% {
+    transform: rotate(-1.5deg);
+  }
+  36% {
+    transform: rotate(1.5deg);
+  }
+  38% {
+    transform: rotate(-1.5deg);
+  }
+  40% {
+    transform: rotate(1.5deg);
+  }
+  42% {
+    transform: rotate(-1.5deg);
+  }
+  44% {
+    transform: rotate(1.5deg);
+  }
+  46% {
+    transform: rotate(-1.5deg);
+  }
+  48% {
+    transform: rotate(1.5deg);
+  }
+  50% {
+    transform: rotate(-1.5deg);
+  }
+  52% {
+    transform: rotate(1.5deg);
+  }
+  54% {
+    transform: rotate(-1.5deg);
+  }
+  56% {
+    transform: rotate(1.5deg);
+  }
+  58% {
+    transform: rotate(-1.5deg);
+  }
+  60% {
+    transform: rotate(1.5deg);
+  }
+  62% {
+    transform: rotate(-1.5deg);
+  }
+  64% {
+    transform: rotate(1.5deg);
+  }
+  66% {
+    transform: rotate(-1.5deg);
+  }
+  68% {
+    transform: rotate(1.5deg);
+  }
+  70% {
+    transform: rotate(-1.5deg);
+  }
+  72% {
+    transform: rotate(1.5deg);
+  }
+  74% {
+    transform: rotate(-1.5deg);
+  }
+  76% {
+    transform: rotate(1.5deg);
+  }
+  78% {
+    transform: rotate(-1.5deg);
+  }
+  80% {
+    transform: rotate(1.5deg);
+  }
+  82% {
+    transform: rotate(-1.5deg);
+  }
+  84% {
+    transform: rotate(1.5deg);
+  }
+  86% {
+    transform: rotate(-1.5deg);
+  }
+  88% {
+    transform: rotate(1.5deg);
+  }
+  90% {
+    transform: rotate(-1.5deg);
+  }
+  92% {
+    transform: rotate(1.5deg);
+  }
+  94% {
+    transform: rotate(-1.5deg);
+  }
+  96% {
+    transform: rotate(1.5deg);
+  }
+  98% {
+    transform: rotate(-1.5deg);
+  }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
   }
 }

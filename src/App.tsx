@@ -6,7 +6,7 @@ const Websites = require("./constant/websites.json");
 
 class App extends React.Component {
   public state = {
-    bgUrl: ""
+    bgUrl: window.localStorage.bgUrl || ""
   };
 
   public onEvent = (type, value) => {
@@ -20,11 +20,17 @@ class App extends React.Component {
     }
   };
 
+  public componentDidMount() {
+    if (window.localStorage.bgUrl) {
+      this.onEvent("change-bg", window.localStorage.bgUrl);
+    }
+  }
+
   public render() {
     const { bgUrl } = this.state;
-		console.log("​App -> publicrender -> bgUrl", bgUrl)
+    console.log("​App -> publicrender -> bgUrl", bgUrl);
     const style = bgUrl ? { background: `url(${this.state.bgUrl})` } : {};
-		console.log("​App -> publicrender -> style", style)
+    console.log("​App -> publicrender -> style", style);
     return (
       <div className="App" style={style}>
         <Layout websites={Websites} onEvent={this.onEvent} />
