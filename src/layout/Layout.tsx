@@ -85,6 +85,11 @@ class Layout extends PureComponent<IProps, IState> {
         return true;
     }
   };
+  public componentDidMount() {
+    window.addEventListener('storage', e => {
+			console.log('​Layout -> publiccomponentDidMount -> e', e)
+    })
+  }
   public render() {
     const { onEvent, websites } = this.props;
     const { showClock } = this.state;

@@ -21,6 +21,7 @@
 
 .tools {
   grid-area: t;
+  height: 100%;
   /* background-color: #87cb62; */
 }
 
@@ -30,6 +31,7 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 100%;
   grid-column-gap: 10px;
+  padding-top: 30px;
   /* background-color: #ede6c9; */
 }
 
@@ -129,14 +131,19 @@
 .ant-input-clear-icon svg:hover {
   transform: scale(1.4);
 }
-
+.ant-input:focus, .ant-input:hover {
+  border-color: #fff
+}
+.ant-modal-content, .ant-btn, .ant-input {
+  border-radius: 0;
+}
 
 /* 媒体查询，自适应 */
 @media screen and (max-width: 1400px) {
   .wrapper {
     grid-template-areas:
       "h h h h h h h h h h h h"
-      ". . t t t t t t t t . ."
+      ". t t t t t t t t t t ."
       ". m m m m m m m m m m ."
       "f f f f f f f f f f f f";
   }

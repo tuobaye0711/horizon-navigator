@@ -20,7 +20,16 @@ const Block = ({ category, websites, className }: IProps) => {
             store.set(category + idx, i);
           }
           const card = store.get(category + idx);
-          return <UrlCard name={card.name} url={card.url} key={card.weight} position={category + idx} />;
+          return (
+            <UrlCard
+              name={card.name}
+              url={card.url}
+              key={card.weight}
+              position={category + idx}
+              weight={card.weight}
+              category={category}
+            />
+          );
         })}
     </div>
   );

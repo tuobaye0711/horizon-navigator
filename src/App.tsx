@@ -20,12 +20,6 @@ class App extends React.Component {
     }
   };
 
-  public componentDidMount() {
-    if (window.localStorage.bgUrl) {
-      this.onEvent("change-bg", window.localStorage.bgUrl);
-    }
-  }
-
   public render() {
     const { bgUrl } = this.state;
     console.log("​App -> publicrender -> bgUrl", bgUrl);
