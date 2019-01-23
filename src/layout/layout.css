@@ -131,11 +131,18 @@
 .ant-input-clear-icon svg:hover {
   transform: scale(1.4);
 }
-.ant-input:focus, .ant-input:hover {
-  border-color: #fff
+.ant-input:focus,
+.ant-input:hover {
+  border-color: #fff;
 }
-.ant-modal-content, .ant-btn, .ant-input {
+.ant-modal-content,
+.ant-btn,
+.ant-input {
   border-radius: 0;
+}
+.ant-input-search.ant-input-search-enter-button > .ant-input-suffix {
+  position: absolute;
+  margin: -20px -12px 0 0;
 }
 
 /* 媒体查询，自适应 */
