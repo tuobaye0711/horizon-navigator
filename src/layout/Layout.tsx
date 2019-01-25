@@ -23,7 +23,6 @@ interface IState {
 }
 
 const categorys = [
-  "地平线",
   "常用",
   "IT技术",
   "设计",
@@ -32,11 +31,6 @@ const categorys = [
   "数码",
   "体育",
   "工具",
-  "我在日本",
-  "我在韩国",
-  "我在台湾",
-  "我在香港",
-  "我在海外",
   "生活",
   "社交",
   "阅读",
@@ -56,7 +50,12 @@ const categorys = [
   "游戏",
   "商旅",
   "邮箱",
-  "银行"
+  "银行",
+  "我在日本",
+  "我在韩国",
+  "我在台湾",
+  "我在香港",
+  "我在海外",
 ];
 
 class Layout extends PureComponent<IProps, IState> {

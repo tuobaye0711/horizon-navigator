@@ -16,11 +16,5 @@
     "show": "Bing",
     "url": "https://cn.bing.com/search?q=",
     "description": "必应一下，你也能知道"
-  },
-  {
-    "name": "wiki",
-    "show": "Wiki",
-    "url": "http://wiki.hobot.cc/dosearchsite.action?queryString=",
-    "description": "内网wiki，点击搜素"
   }
 ]
