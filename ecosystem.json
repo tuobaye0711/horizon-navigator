@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "nav",
+      "script": "http-server",
+      "args": ["./build", "-g"],
+      "env": {
+        "NODE_ENV": "build",
+        "ESLINT": "none",
+        "PORT": 8000
+      }
+    }
+  ]
+}
