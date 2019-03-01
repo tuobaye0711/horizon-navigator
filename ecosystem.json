@@ -7,7 +7,7 @@
       "env": {
         "NODE_ENV": "build",
         "ESLINT": "none",
-        "PORT": 8000
+        "PORT": 3001
       }
     }
   ]
